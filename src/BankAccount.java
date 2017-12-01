@@ -1,8 +1,15 @@
 
-public abstract class BankAccount {
+public abstract class BankAccount extends Bank {
 
-	private int accountID;
+	protected static int accountID;
 	protected double currentBalance ;
+	
+		
+	/*public static double getCurrentBalance(int accountID)
+	{
+		BankAccount b1 = getBankAccount(accountID);
+		return b1.currentBalance;
+	}*/
 	
 	public static void depositMoney(int accountID, double amount)
 	{
@@ -15,5 +22,8 @@ public abstract class BankAccount {
 		
 	}
 	
-	
+	public static void transaction(int receiverID , int senderID, double amount)
+	{
+		
+	}
 }

@@ -25,11 +25,11 @@ public class Bank {
 	 }
 	 
 	 // retrieve BankAccount
-	 public static BankAccount getBankAccount(int accountID)
+	/* public static BankAccount getBankAccount(int accountID)
 	 {
-		 BankAccount a = new BankAccount();
 		 
-		 return a;
-	 }
+		
+		 
+	 }*/
 
 }
