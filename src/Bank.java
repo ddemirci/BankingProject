@@ -42,12 +42,46 @@ public class Bank {
 	 {
 		 return interestRate;
 	 }
-	 // retrieve BankAccount
-	/* public static BankAccount getBankAccount(int accountID)
+	 
+	 public static int getNumberOfInterestAccounts()
 	 {
-		 
+		 return interestAccounts.size() ;
+	 }
+
+	 public static int getNumberOfNonInterestAccounts()
+	 {
+		 return nonInterestAccounts.size();
+	 }
+	 // retrieve BankAccount
+	public static BankAccount getBankAccount(int accountID)
+	 {
+		int sizeOfInterest = getNumberOfInterestAccounts();
+		int sizeOfNonInterest = getNumberOfNonInterestAccounts();
+		int interestFound = -1;
+		int nonInterestFound = -1;
+		int i = 0 ; 
+		int j = 0 ;
+		//Interest
+		for(int k=0; k<sizeOfInterest; k++)
+		{
+			if(interestAccounts.get(k).accountID == accountID) 
+			interestFound = 1;	
+			i=k;	
+				
+		}
+		//Interest
+		for(int l =0; l<sizeOfNonInterest; l++)
+		{
+			if(nonInterestAccounts.get(l).accountID == accountID)  
+			nonInterestFound = 1;	
+			j=l;	
+			
+		}
 		
-		 
-	 }*/
+		if(interestFound == 1) return interestAccounts.get(i);
+		if (nonInterestFound == 1) return nonInterestAccounts.get(j);
+		
+		
+	 }
 
 }

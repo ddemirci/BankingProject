@@ -11,6 +11,9 @@ public class BankingProject {
 			Bank.openAccount(2);
 			Bank.openAccount(0);
 			Bank.getInterestRate();
+			System.out.println(Bank.getNumberOfInterestAccounts());
+			System.out.println(Bank.getNumberOfNonInterestAccounts());
+		
 	}
 
 }
