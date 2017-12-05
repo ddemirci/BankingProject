@@ -1,12 +1,16 @@
 
 public class InterestAccount extends BankAccount {
 
-		private static double interestRate;	
+	
+	
 	public InterestAccount() {
 		// TODO Auto-generated constructor stub
-		
 		this.interestRate = interestRate;
-		this.accountID = accountID;		
+		this.accountID = counter;	
+		System.out.println("Interest account has been generated.");
+		System.out.println("Interest rate is: "+ interestRate);
+		counter++;
+		
 	}	
 		
 	public static void setInterestRate(double rate)

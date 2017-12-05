@@ -5,8 +5,12 @@ public class BankingProject {
 		// TODO Auto-generated method stub
 
 			
-			
-			
+			Bank.setInterestRate(3.7);
+			Bank.openAccount(0);
+			System.out.println("Yaptık bisey");
+			Bank.openAccount(2);
+			Bank.openAccount(0);
+			Bank.getInterestRate();
 	}
 
 }
