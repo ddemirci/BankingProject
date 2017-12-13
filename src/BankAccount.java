@@ -1,7 +1,7 @@
 
 public abstract class BankAccount extends Bank {
 
-	protected static int accountID;
+	protected int accountID;
 	protected double currentBalance ;
 	
 		
@@ -13,7 +13,8 @@ public abstract class BankAccount extends Bank {
 	
 	public static void depositMoney(int accountID, double amount)
 	{
-		
+		getBankAccount(accountID).currentBalance += amount;
+		System.out.println(accountID + "no'lu hesaba "+ amount + "'luk para girişi gerçekleşti.");
 	}
 	
 	
@@ -26,4 +27,6 @@ public abstract class BankAccount extends Bank {
 	{
 		
 	}
+	
+	
 }
