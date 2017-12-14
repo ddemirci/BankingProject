@@ -17,8 +17,9 @@ public class BankingProject {
 			
 			System.out.println(Bank.nonInterestAccounts.get(0).currentBalance);
 			BankAccount.depositMoney(2, 1000);
+			BankAccount.depositMoney(1, 2000.0);
 			System.out.println(Bank.nonInterestAccounts.get(0).currentBalance);
-			
+			Bank.getAllBankAccountsInfo();
 	}
 
 }

@@ -65,5 +65,19 @@ public class Bank {
 		
 		return interestAccounts.get(0);
 	}
+	 
+	 public static void getAllBankAccountsInfo()
+	 {
+		 System.out.println("Interest Account IDs \n There are"+interestAccounts.size() +  " account(s) " );
+		 for (BankAccount bankAccount : interestAccounts) 
+		 {
+			System.out.println(bankAccount.accountID + "   " + bankAccount.currentBalance);
+		 }
+		 System.out.println("\n Non-Interest Account IDs \n There are" + nonInterestAccounts.size() +  " account(s)" );
+		 for (BankAccount bankAccount : nonInterestAccounts) 
+		 {
+			System.out.println(bankAccount.accountID + "   " + bankAccount.currentBalance);
+		 }
+	 }
 
 }
