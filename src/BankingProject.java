@@ -22,17 +22,31 @@ public class BankingProject {
 			System.out.println(Bank.nonInterestAccounts.get(0).currentBalance);
 			Bank.getAllBankAccountsInfo();
 			*/
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Welcome to the Banking Simulator");
+		System.out.println("Please enter your credentials");
+		System.out.print("Customer number: "); // Customer Number
+		int cNumber = scan.nextInt();
+		System.out.print("Your password: ");// Password
+		String cPass = scan.nextLine();
+		
+		logIn(cNumber, cPass); // LogIn function
+		
+		// Cont. from here
 		
 		
+		int decision = scan.nextInt();
+		if(decision==1) showAdminMenu();
+		else showCustomerMenu();
 		
-		
-		// There will be a menu
-		int decision;
-		while(true)
+		System.out.println("Press \"0\" to exit ");
+		while(decision != 0)
 		{
-			Scanner scan = new Scanner(System.in);
-			showCustomerMenu();
-			decision = scan.nextInt();
+			
+			decision= scan.nextInt();
+		
+			
+			
 			
 			
 		}
@@ -42,6 +56,7 @@ public class BankingProject {
 	public static void logIn(int customerID, String password)
 	{
 		// check the info from Excel
+		
 	}
 	
 	public static void logOut()
@@ -52,14 +67,15 @@ public class BankingProject {
 	{
 		System.out.println("Which operation do you want to proceed ? \n Please specify the number");
 		System.out.println("1. Open an account. \n2. Close an account.");
-		
+		System.out.println("3. See your balance of your accounts. \n4. Deposit money.");
+		System.out.println("5. Withdraw money. \n6. Transfer money.");
 		System.out.println("");
 	}
 	
 	public static void showAdminMenu()
 	{
 		System.out.println("Which operation do you want to proceed ? \n Please specify the number");
-		System.out.println("1. Create a user. \n2.Delete a user.");
+		System.out.println("1. Create a user. \n2. Delete a user.");
 		System.out.println("3. Set interest rate. \n4. Get interest rate.");
 		System.out.println("5. Retrieve an account in the bank. \n6. Retrieve all accounts in the bank.");
 		
