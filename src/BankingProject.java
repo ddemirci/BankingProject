@@ -22,6 +22,9 @@ public class BankingProject {
 			System.out.println(Bank.nonInterestAccounts.get(0).currentBalance);
 			Bank.getAllBankAccountsInfo();
 			*/
+		
+		/*
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Welcome to the Banking Simulator");
 		System.out.println("Please enter your credentials");
@@ -51,11 +54,19 @@ public class BankingProject {
 			
 		}
 			 
-			  
+		 */
+		BankAdmin.addCustomer("Doruk", "Demirci", 1, "dorr");
+		BankAdmin.openAccount(1, 0, 250);
+		BankAdmin.openAccount(1, 1, 1000);
+		Bank.setInterestRate(2.70);
+		BankAdmin.openAccount(1, 0, 350);
+		
+		BankAdmin.getAllBankAccountsInfo();
 	}
 	public static void logIn(int customerID, String password)
 	{
 		// check the info from Excel
+	
 		
 	}
 	
