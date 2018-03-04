@@ -3,17 +3,18 @@ public class Customer {
 
 	String name;
 	String surname;
-	int customerID;
+	int customerID ;
 	String password;
 	double balance;
-	
-	public Customer(String name,String surname,int ID,String pass) {
+	public static int IDcounter = 1; 
+	public Customer(String name,String surname,String pass) {
 		
 		
 		this.name = name;
 		this.surname = surname;
-		this.customerID = ID;
+		this.customerID = IDcounter;
 		this.password = pass;
+		this.balance = 0;
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("Customer ");
@@ -21,7 +22,9 @@ public class Customer {
 		sb.append(" ");
 		sb.append(surname);
 		sb.append(" has been generated with Customer ID: ");
-		sb.append(ID);
+		sb.append(IDcounter);
+		
+		IDcounter ++;
 		
 		System.out.println(sb.toString());
 	}

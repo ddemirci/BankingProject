@@ -21,10 +21,7 @@ public class Bank {
 		 return BankAdmin.interestRate;
 	 }
 	 
-	 public static int getAccountID(BankAccount account)
-	 {
-		return account.accountID;
-	 }
+	 
 	 // retrieve BankAccount
 	
 	 /*

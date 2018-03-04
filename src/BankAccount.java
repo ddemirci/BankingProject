@@ -1,8 +1,9 @@
 
 public abstract class BankAccount extends Bank {
 
-	protected int accountID;
-	protected double currentBalance ;
+	long accountID;
+	double balance;
+	int ownerID;
 	
 	
 		

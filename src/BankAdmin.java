@@ -8,6 +8,12 @@ public class BankAdmin {
 	static ArrayList<InterestAccount> interestAccounts = new ArrayList<InterestAccount>();
 	static ArrayList<NonInterestAccount> nonInterestAccounts = new ArrayList<NonInterestAccount>();
 	
+	
+	
+	public static void addCustomer(String name,String surname,String pass)
+	{
+		Customer c = new Customer(name, surname,pass);
+	}
 	 // type = 0 for interest
 	 // else for nonInterest
 	 public static void openAccount(int customerID,int type, double balance)
@@ -46,14 +52,30 @@ public class BankAdmin {
 		 }
 	 }
 	 
+	 public static long getAccountID(BankAccount account)
+	 {
+		return account.accountID;
+	 }
+	 
 	 //How to retrieve a bank account
-	
-	
-	
-	
-	public static void addCustomer(String name,String surname,int ID,String pass)
+	 public static BankAccount getBankAccount(long accountID)
+	 {
+		for(int i=0; i< interestAccounts.size() ; i++ )
 		{
-			Customer c = new Customer(name, surname, ID, pass);
+			if(getAccountID(interestAccounts.get(i)) == accountID) return interestAccounts.get(i);
 		}
+		
+		for (BankAccount bankAccount : nonInterestAccounts) 
+		{
+			if(getAccountID(bankAccount) == accountID) return bankAccount;
+		}
+		
+		return interestAccounts.get(0);
+	}
+	
+	
+	
+	
+	
 
 }

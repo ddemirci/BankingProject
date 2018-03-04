@@ -55,13 +55,17 @@ public class BankingProject {
 		}
 			 
 		 */
-		BankAdmin.addCustomer("Doruk", "Demirci", 1, "dorr");
+		
+		BankAdmin.addCustomer("Doruk", "Demirci","dorr");
 		BankAdmin.openAccount(1, 0, 250);
 		BankAdmin.openAccount(1, 1, 1000);
 		Bank.setInterestRate(2.70);
 		BankAdmin.openAccount(1, 0, 350);
 		
-		BankAdmin.getAllBankAccountsInfo();
+		//BankAdmin.getAllBankAccountsInfo();
+		//System.out.println(BankAdmin.getBankAccount(100000).balance);
+		
+		showAdminMenu();
 	}
 	public static void logIn(int customerID, String password)
 	{
@@ -89,6 +93,53 @@ public class BankingProject {
 		System.out.println("1. Create a user. \n2. Delete a user.");
 		System.out.println("3. Set interest rate. \n4. Get interest rate.");
 		System.out.println("5. Retrieve an account in the bank. \n6. Retrieve all accounts in the bank.");
+		System.out.println("7. Exit");
+		System.out.println();
+		Scanner admin = new Scanner(System.in);
+		int adminChoice = admin.nextInt();
+		if(adminChoice == 1)
+		{
+			System.out.println("Please enter name and surname of the new user");
+			admin.nextLine();
+			String fullName=admin.nextLine();
+			System.out.println("Please enter password of the new user");
+			String pass = admin.next();
+			String[] parts = fullName.split(" ");
+			String name = parts[0];
+			String surname = parts[1];
+				
+			
+			BankAdmin.addCustomer(name, surname,pass);
+			showAdminMenu();
+		}
+		else if(adminChoice == 3)
+		{
+			System.out.println("Current interest rate is " + Bank.getInterestRate());
+			System.out.println("Please enter new interest rate");
+			double newRate = admin.nextDouble();
+			Bank.setInterestRate(newRate);
+		}
+		else if(adminChoice == 4)
+		{
+			System.out.println("Current interest rate is " + Bank.getInterestRate());
+		}
+		else if(adminChoice == 5)
+		{
+			System.out.println("Please enter the accountID that you want to retrieve:");
+			long id = admin.nextLong();
+			BankAccount retrieved = BankAdmin.getBankAccount(id);
+			System.out.println("Owner is "+ retrieved.ownerID);
+			System.out.println("Balance is " + retrieved.balance);
+			String accType = retrieved.getClass().toString();
+			String[] type = accType.split(" ");
+			System.out.println("Account Type is " + type[1]);
+		}
+		else if(adminChoice == 6)
+		{
+			BankAdmin.getAllBankAccountsInfo();
+			showAdminMenu();
+		}
+		else if(adminChoice == 7) return;
 		
 	}
 
